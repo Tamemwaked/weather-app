@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather app</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  </head>
+  <body>
+    <input type="text" id="input" placeholder="city" />
+    <button onclick="searchedCity()">search</button>
+
+    <div class="favorite-cities"></div>
+    <div class="searched-city"></div>
+    <script id="weather-template" type="text/x-handlebars-template">
+      {{#each city}}
+        <div class="favorite-box">
+          <i
+            id="removeCity"
+            data-name={{name}}
+            class="large material-icons"
+          >remove_circle</i>
+
+          <p>{{name}}</p>
+          <p>{{temperature}} °C</p>
+          <p>{{condition}}</p>
+
+          <img src="{{conditionPic}}" alt="" />
+        </div>
+      {{/each}}
+    </script>
+
+    <script id="searched-template" type="text/x-handlebars-template">
+      <div class="searched-box">
+        <i
+          id="addCity"
+          data-temp={{temperature}}
+          data-name={{name}}
+          data-condition={{condition}}
+          data-icon={{conditionPic}}
+          class="large material-icons"
+        >add_box</i>
+
+        <h1>{{temperature}} °C</h1>
+        <h3 data-name={{name}}>{{name}}</h3>
+        <p>{{condition}}</p>
+        <img src="{{conditionPic}}" alt="" />
+
+      </div>
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="render.js"></script>
+    <script src="model.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

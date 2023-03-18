@@ -1,0 +1,19 @@
+body {
+  background-color: #b3e5fc;
+}
+.favorite-box {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #80d8ff;
+  box-shadow: inset 0 0 20px #00b0ff;
+}
+.searched-box {
+  background-color: #80d8ff;
+  box-shadow: inset 0 0 45px #00b0ff;
+
+  margin: 100px;
+  text-align: center;
+
+  padding: 15px;
+}
